@@ -1,17 +1,59 @@
+/* ---Light CSS Reset--- */
+html {
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+/* ---Custom properties--- */
+:root {
+    --primary-color: #f0f0f0;
+    --font-size-large: calc(16px + 2.5vw);
+    --font-size-small: calc(10px + 1.5vw);
+    --font-size-extra-small: calc(8px + 0.575vw);
+    --transition-default: all 0.2s ease;
+}
+
+/* ---Basic styles --- */
+
 body{
-    background-image: url(./images/bg.jpeg);
+    background-image: url(./images/background-img.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     margin: 0;
+    font-family: "Nunito Sans", sans-serif;
     
-    color: #f0f0f0;
+    color: var(--primary-color);
 }
 
-img{
-    height: 8vh;
-    color: #f0f0f0;
+#content {
+    padding: 1em;
+}
+
+header>nav {
+    padding: 1em;
+}
+
+.big-screen-icon {
+    display: none;
 }
 
 nav {
@@ -19,3 +61,93 @@ nav {
     align-items: center;
     justify-content: space-around;
 }
+
+.btn{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: var(--font-size-extra-small);
+    padding: 0.25em 1em;
+    margin: 0 .75em;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: var(--transition-default);
+
+}
+
+.btn:hover{
+    color: var(--primary-color);
+    box-shadow: 0px 0px 1.5px 1.5px var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn:after {
+    content: "";
+    background: black;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+
+.btn:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.btn:active{
+    color: black;
+}
+
+/* ---Home styles --- */
+.home-content{
+    max-width: 80vw;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-content>h2{
+    margin: 1em 0;
+    font-size: var(--font-size-large);
+}
+
+.home-content>p{
+    font-size: var(--font-size-small);
+}
+
+.small-screen-icon {
+    display: block;
+    height: 10vh;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media only screen and (min-width: 450px) {
+    .home-content{
+        margin: 0;
+        max-width: 65%;
+        padding-left: 3rem;
+        padding-top: 2rem;
+    }
+
+    .big-screen-icon{
+        display: inline-block;
+        height: 8vh;
+    }
+
+    .small-screen-icon{
+        display: none;
+    }
+}
+
+
