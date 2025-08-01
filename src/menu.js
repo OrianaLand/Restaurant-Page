@@ -33,11 +33,17 @@ const categories = [
   createCategory("Beverages", beverages),
 ];
 
+import icon from "./images/cooking-icon.png";
+const phoneIcon = document.createElement("img");
+phoneIcon.src = icon;
+phoneIcon.classList.add("small-screen-icon");
+
 export const menuLoad = () => {
   const content = document.querySelector("#content");
   content.innerHTML = "";
 
   const menuContainer = document.createElement("div");
+  menuContainer.classList.add("menu-container");
   for (let i = 0; i < categories.length; i++) {
     const card = document.createElement("div");
     const cardTitle = document.createElement("h2");
@@ -66,6 +72,6 @@ export const menuLoad = () => {
     }
     menuContainer.append(card);
   }
-
+  menuContainer.append(phoneIcon);
   content.append(menuContainer);
 };

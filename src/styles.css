@@ -24,8 +24,11 @@ p {
 /* ---Custom properties--- */
 :root {
     --primary-color: #f0f0f0;
-    --font-size-large: calc(16px + 2.5vw);
-    --font-size-small: calc(10px + 1.5vw);
+    --primary-color-darken: #c4bfb3;
+    --secondary-color: #010101;
+    --font-size-large: calc(16px + 2.25vw);
+    --font-size-medium: calc(14px + 0.1vw);
+    --font-size-small: calc(10px + 1vw);
     --font-size-extra-small: calc(8px + 0.575vw);
     --transition-default: all 0.2s ease;
 }
@@ -37,15 +40,20 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100vh;
     margin: 0;
     font-family: "Nunito Sans", sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     
     color: var(--primary-color);
 }
 
 #content {
     padding: 1em;
+    flex: 1;
 }
 
 header>nav {
@@ -106,7 +114,7 @@ nav {
     color: black;
 }
 
-/* ---Home styles --- */
+/* ---Home tab styles --- */
 .home-content{
     max-width: 80vw;
     margin-top: 3rem;
@@ -131,23 +139,87 @@ nav {
     margin-right: auto;
 }
 
+/* ---Menu tab Styles--- */
 
-@media only screen and (min-width: 450px) {
-    .home-content{
+.menu-container{
+   display: flex;
+   flex-direction: column;
+   border-radius: 5px;
+   margin: auto;
+   width: 75%;
+}
+
+.card{
+    padding: 1em;
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color) ;
+}
+
+.card-title{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.menu-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.item-name{
+    padding-right: 1em;
+}
+
+.item-price{
+    align-self: end;
+}
+
+.item-name, .item-price{
+    font-size: var(--font-size-small);
+}
+
+
+@media only screen and (min-width: 780px){
+    #content{
+        display: grid;
+    }
+
+    .home-content {
         margin: 0;
         max-width: 65%;
         padding-left: 3rem;
         padding-top: 2rem;
     }
-
-    .big-screen-icon{
+    
+    .big-screen-icon {
         display: inline-block;
         height: 8vh;
     }
-
-    .small-screen-icon{
+    
+    .small-screen-icon {
         display: none;
     }
+
+    .menu-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 10px;
+        margin-top: 5rem;
+    }
+
+    .card{
+        padding: 1em 1em 4em 1em;
+    }
+
+    .card:hover{
+        background-color: var(--primary-color-darken);
+        transform: translateY(-4px);
+        transition: var(--transition-default);
+    }
+    .item-name, .item-price{
+        font-size: min(20px, var(--font-size-small));
+    }
 }
-
-

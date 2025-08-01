@@ -6,7 +6,7 @@ export const aboutLoad = () => {
   const overviewContainer = document.createElement("div");
   const overviewTitle = document.createElement("h1");
   const overviewText = document.createElement("p");
-  overviewTitle.textContent = "OVERVIEW TITLE";
+  overviewTitle.textContent = "Who we are";
   overviewText.textContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ";
   overviewContainer.append(overviewTitle, overviewText);
@@ -14,7 +14,7 @@ export const aboutLoad = () => {
   const locationContainer = document.createElement("div");
   const locationTitle = document.createElement("h1");
   const locationText = document.createElement("p");
-  locationTitle.textContent = "LOCATION TITLE";
+  locationTitle.textContent = "Loc";
   locationText.textContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ";
   locationContainer.append(locationTitle, locationText);
