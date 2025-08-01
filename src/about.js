@@ -1,3 +1,8 @@
+import icon from "./images/cooking-icon.png";
+const phoneIcon = document.createElement("img");
+phoneIcon.src = icon;
+phoneIcon.classList.add("small-screen-icon");
+
 export const aboutLoad = () => {
   const content = document.querySelector("#content");
   content.innerHTML = "";
@@ -30,5 +35,5 @@ export const aboutLoad = () => {
 
   container.append(overviewContainer, locationContainer, hoursContainer);
 
-  content.append(container);
+  content.append(container, phoneIcon);
 };
