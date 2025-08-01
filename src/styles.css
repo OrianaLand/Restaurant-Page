@@ -181,6 +181,25 @@ nav {
     font-size: var(--font-size-small);
 }
 
+/* ---About tab Styles ---*/
+.about-container{
+    max-width: 80%;
+    justify-self: center;
+    text-align: center;
+}
+
+.about-container h1{
+    margin-bottom: 1rem;
+}
+
+.about-container p{
+    white-space: pre-line;
+    font-size: var(--font-size-small);
+}
+
+.about-container>div{
+    padding-bottom: 3rem;
+}
 
 @media only screen and (min-width: 780px){
     #content{
@@ -221,5 +240,18 @@ nav {
     }
     .item-name, .item-price{
         font-size: min(20px, var(--font-size-small));
+    }
+
+    .about-container{
+        max-width: 75ch;
+    }
+
+    .about-container:first-child{
+        margin-top: 1em;
+    }
+
+    .about-container h1{
+        font-size: var(--font-size-large);
+        
     }
 }
