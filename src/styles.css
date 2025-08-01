@@ -214,8 +214,6 @@ nav {
 .about-container>div{
     padding-bottom: 3rem;
 }
-
-/* --- Book table tab Styles ---*/
 form{
     display: inline-block;
     padding: 1.75em 1em;
@@ -337,6 +335,43 @@ form p{
     .btn.book-table {
         justify-self: end;
     }
+
+
+
+        #content {
+            
+            scroll-snap-type: y mandatory;
+            overflow-y: auto;
+            height: calc(100vh - var(--navbar-height, 80px));
+           
+            scroll-behavior: smooth;
+            scroll-snap-stop: normal;
+            /* Allows skipping sections with fast scrolling */
+            
+            /* Smoother scrollbar */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.9) transparent;
+        }
+    
+        .about-container {
+            
+            overflow: visible;
+            height: auto;
+            
+        }
+    
+        .about-container>div {
+            scroll-snap-align: center;
+            min-height: calc(100vh - var(--navbar-height, 80px));
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding:  0;
+
+        }
+
+        
 }
 
 @media screen and (max-width: 768px) {
