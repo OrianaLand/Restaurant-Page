@@ -157,6 +157,7 @@ nav {
     margin-bottom: 1rem;
     background-color: var(--primary-color);
     color: var(--secondary-color) ;
+    position: relative;
 }
 
 .card-title{
@@ -180,6 +181,18 @@ nav {
 
 .item-name, .item-price{
     font-size: var(--font-size-small);
+}
+
+.category-icon {
+    display: block;
+    width: clamp(60px, 12vw, 120px);
+    height: auto;
+    margin: 1rem auto 0 auto;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* ---About tab Styles ---*/
@@ -236,6 +249,8 @@ form p{
     display: block;
     margin: 1.5rem auto 0 auto;
 }
+
+
 
 @media only screen and (min-width: 780px){
     #content{
@@ -302,7 +317,7 @@ form p{
         width: 50%;
     }
 
-    nav {
+    header>nav {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
         align-items: center;
@@ -321,5 +336,28 @@ form p{
     
     .btn.book-table {
         justify-self: end;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .category-icon {
+        width: clamp(50px, 15vw, 80px);
+        bottom: -20px;
+    }
+
+    .card {
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .category-icon {
+        width: clamp(40px, 18vw, 70px);
+        bottom: -20px;
+    }
+
+    .card {
+        padding-bottom: 2.5rem;
     }
 }

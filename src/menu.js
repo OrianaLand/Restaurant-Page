@@ -6,6 +6,11 @@ function createCategory(title, items) {
   return { title, items };
 }
 
+import icon from "./images/cooking-icon.png";
+import appetizerImg from "./images/dumplings.png";
+import mainImg from "./images/pad-thai.png";
+import beveragesImg from "./images/iced-tea.png";
+
 const appetizers = [
   createItem("Kimchi Pancakes", "$6"),
   createItem("Thai Spring Rolls", "$5"),
@@ -33,7 +38,8 @@ const categories = [
   createCategory("Beverages", beverages),
 ];
 
-import icon from "./images/cooking-icon.png";
+const categoryImages = [appetizerImg, mainImg, beveragesImg];
+
 const phoneIcon = document.createElement("img");
 phoneIcon.src = icon;
 phoneIcon.classList.add("small-screen-icon");
@@ -70,6 +76,12 @@ export const menuLoad = () => {
       item.append(itemName, itemPrice);
       card.append(item);
     }
+    const categoryImg = document.createElement("img");
+    categoryImg.src = categoryImages[i];
+    categoryImg.alt = `${categories[i].title} icon`;
+    categoryImg.classList.add("category-icon");
+
+    card.append(categoryImg);
     menuContainer.append(card);
   }
   menuContainer.append(phoneIcon);
