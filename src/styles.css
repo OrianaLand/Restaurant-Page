@@ -301,4 +301,25 @@ form p{
     form input {
         width: 50%;
     }
+
+    nav {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        padding: 1em 3em;
+    }
+    
+    .big-screen-icon {
+        justify-self: start;
+    }
+    
+    .nav-buttons {
+        display: flex;
+        gap: 10px;
+        justify-self: center;
+    }
+    
+    .btn.book-table {
+        justify-self: end;
+    }
 }
