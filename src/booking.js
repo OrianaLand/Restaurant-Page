@@ -32,7 +32,7 @@ export const bookingLoad = () => {
   const phoneInput = document.createElement("input");
   phoneLabel.setAttribute("for", "phone-input");
   phoneInput.id = "phone-input";
-  phoneInput.type = "number";
+  phoneInput.type = "text";
   phoneLabel.textContent = "Phone number:";
   phone.append(phoneLabel, phoneInput);
 
@@ -44,6 +44,15 @@ export const bookingLoad = () => {
   emailInput.type = "email";
   emailLabel.textContent = "Email:";
   email.append(emailLabel, emailInput);
+
+  const guests = document.createElement("p");
+  const guestsLabel = document.createElement("label");
+  const guestsInput = document.createElement("input");
+  guestsLabel.setAttribute("for", "guests-input");
+  guestsInput.id = "guests-input";
+  guestsInput.type = "number";
+  guestsLabel.textContent = "Guests:";
+  guests.append(guestsLabel, guestsInput);
 
   const date = document.createElement("p");
   const dateLabel = document.createElement("label");
@@ -64,9 +73,9 @@ export const bookingLoad = () => {
   time.append(timeLabel, timeInput);
 
   const bookBtn = document.createElement("button");
-  bookBtn.innerText = "Submit";
+  bookBtn.innerText = "Confirm table";
   bookBtn.classList.add("btn", "confirm-book-table");
 
-  form.append(name, lastname, phone, email, date, time, bookBtn);
+  form.append(name, lastname, phone, email, guests, date, time, bookBtn);
   content.append(form, phoneIcon);
 };

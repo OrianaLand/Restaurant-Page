@@ -205,7 +205,7 @@ nav {
 /* --- Book table tab Styles ---*/
 form{
     display: inline-block;
-    padding: 1em;
+    padding: 1.75em 1em;
     border: 1px solid var(--primary-color);
     border-radius: 1em;
     border-width: 2px;
