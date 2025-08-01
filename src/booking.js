@@ -15,6 +15,7 @@ export const bookingLoad = () => {
   nameLabel.setAttribute("for", "name-input");
   nameInput.id = "name-input";
   nameInput.type = "text";
+  nameInput.required = true;
   nameLabel.textContent = "Name:";
   name.append(nameLabel, nameInput);
 
@@ -24,6 +25,7 @@ export const bookingLoad = () => {
   lastnameLabel.setAttribute("for", "lastname-input");
   lastnameInput.id = "lastname-input";
   lastnameInput.type = "text";
+  lastnameInput.required = true;
   lastnameLabel.textContent = "Lastname:";
   lastname.append(lastnameLabel, lastnameInput);
 
@@ -33,6 +35,9 @@ export const bookingLoad = () => {
   phoneLabel.setAttribute("for", "phone-input");
   phoneInput.id = "phone-input";
   phoneInput.type = "text";
+  phoneInput.required = true;
+  phoneInput.pattern = "^(\\d{10}|\\d{3}[.\\-\\s]\\d{3}[.\\-\\s]\\d{4})$"; // Regex to validate correct phone number format
+  phoneInput.placeholder = "123-456-7890";
   phoneLabel.textContent = "Phone number:";
   phone.append(phoneLabel, phoneInput);
 
@@ -42,6 +47,8 @@ export const bookingLoad = () => {
   emailLabel.setAttribute("for", "email-input");
   emailInput.id = "email-input";
   emailInput.type = "email";
+  emailInput.required = true;
+  emailInput.placeholder = "guest@email.com";
   emailLabel.textContent = "Email:";
   email.append(emailLabel, emailInput);
 
@@ -51,6 +58,10 @@ export const bookingLoad = () => {
   guestsLabel.setAttribute("for", "guests-input");
   guestsInput.id = "guests-input";
   guestsInput.type = "number";
+  guestsInput.required = true;
+  guestsInput.min = "1";
+  guestsInput.max = "10";
+  guestsInput.placeholder = "Between 1-10";
   guestsLabel.textContent = "Guests:";
   guests.append(guestsLabel, guestsInput);
 
@@ -60,6 +71,7 @@ export const bookingLoad = () => {
   dateLabel.setAttribute("for", "date-input");
   dateInput.id = "date-input";
   dateInput.type = "date";
+  dateInput.required = true;
   dateLabel.textContent = "Date:";
   date.append(dateLabel, dateInput);
 
@@ -69,6 +81,7 @@ export const bookingLoad = () => {
   timeLabel.setAttribute("for", "time-input");
   timeInput.id = "time-input";
   timeInput.type = "time";
+  timeInput.required = true;
   timeLabel.textContent = "Time:";
   time.append(timeLabel, timeInput);
 
