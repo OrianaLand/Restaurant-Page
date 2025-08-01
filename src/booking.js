@@ -1,3 +1,8 @@
+import icon from "./images/cooking-icon.png";
+const phoneIcon = document.createElement("img");
+phoneIcon.src = icon;
+phoneIcon.classList.add("small-screen-icon");
+
 export const bookingLoad = () => {
   const content = document.querySelector("#content");
   content.innerHTML = "";
@@ -59,8 +64,9 @@ export const bookingLoad = () => {
   time.append(timeLabel, timeInput);
 
   const bookBtn = document.createElement("button");
+  bookBtn.innerText = "Submit";
   bookBtn.classList.add("btn", "confirm-book-table");
 
-  form.append(name, lastname, phone, email, date, time);
-  content.append(form);
+  form.append(name, lastname, phone, email, date, time, bookBtn);
+  content.append(form, phoneIcon);
 };

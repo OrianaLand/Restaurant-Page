@@ -52,6 +52,7 @@ body{
 }
 
 #content {
+    display: grid;
     padding: 1em;
     flex: 1;
 }
@@ -201,6 +202,41 @@ nav {
     padding-bottom: 3rem;
 }
 
+/* --- Book table tab Styles ---*/
+form{
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid var(--primary-color);
+    border-radius: 1em;
+    border-width: 2px;
+    justify-self: center;
+    height: fit-content;
+    margin-top: 2rem;
+}
+
+form label {
+    display: block;
+    min-width: 40%;
+    text-align: left;
+    padding-bottom: .25em;
+}
+
+form input {
+    font: 1em sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+
+form p{
+    padding-bottom: 1em;
+}
+
+.confirm-book-table{
+    display: block;
+    margin: 1.5rem auto 0 auto;
+}
+
 @media only screen and (min-width: 780px){
     #content{
         display: grid;
@@ -253,5 +289,16 @@ nav {
     .about-container h1{
         font-size: var(--font-size-large);
         
+    }
+
+    form label {
+        display: inline-block;
+        text-align: right;
+        padding-right: .5em;
+        font-size: var(--font-size-extra-small);
+    }
+
+    form input {
+        width: 50%;
     }
 }
