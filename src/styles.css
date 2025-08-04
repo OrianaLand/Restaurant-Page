@@ -30,6 +30,7 @@ p {
     --font-size-medium: calc(14px + 0.1vw);
     --font-size-small: calc(10px + 1vw);
     --font-size-extra-small: calc(8px + 0.575vw);
+    --navbar-height: 106.34px;
     --transition-default: all 0.2s ease;
 }
 
@@ -251,9 +252,20 @@ form p{
 
 
 @media only screen and (min-width: 780px){
-    #content{
-        display: grid;
-    }
+    #content {
+            
+        scroll-snap-type: y mandatory;
+        overflow-y: auto;
+        height: calc(100vh - var(--navbar-height, 80px));
+
+        /* Allows skipping sections with fast scrolling */   
+        scroll-behavior: smooth;
+        scroll-snap-stop: normal;
+            
+        /* Smoother scrollbar */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.9) transparent;
+        }
 
     .home-content {
         margin: 0;
@@ -291,9 +303,21 @@ form p{
         font-size: min(20px, var(--font-size-small));
     }
 
-    .about-container{
+    .about-container {
         max-width: 75ch;
+        overflow: visible;
+        height: auto;
     }
+
+    .about-container>div {
+        scroll-snap-align: center;
+        min-height: calc(100vh - var(--navbar-height, 80px));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+
 
     .about-container:first-child{
         margin-top: 1em;
@@ -335,41 +359,6 @@ form p{
     .btn.book-table {
         justify-self: end;
     }
-
-
-
-        #content {
-            
-            scroll-snap-type: y mandatory;
-            overflow-y: auto;
-            height: calc(100vh - var(--navbar-height, 80px));
-           
-            scroll-behavior: smooth;
-            scroll-snap-stop: normal;
-            /* Allows skipping sections with fast scrolling */
-            
-            /* Smoother scrollbar */
-            scrollbar-width: thin;
-            scrollbar-color: rgba(0, 0, 0, 0.9) transparent;
-        }
-    
-        .about-container {
-            
-            overflow: visible;
-            height: auto;
-            
-        }
-    
-        .about-container>div {
-            scroll-snap-align: center;
-            min-height: calc(100vh - var(--navbar-height, 80px));
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding:  0;
-
-        }
 
         
 }
