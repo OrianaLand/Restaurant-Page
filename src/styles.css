@@ -298,6 +298,7 @@ form p{
         background-color: var(--primary-color-darken);
         transform: translateY(-4px);
         transition: var(--transition-default);
+        cursor: pointer;
     }
     .item-name, .item-price{
         font-size: min(20px, var(--font-size-small));
